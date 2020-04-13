@@ -38,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
         web = (WebView)findViewById(R.id.webview);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN); // ei näppäimistö nosta sivua
         web.setWebViewClient(new WebViewClient());
-
-        web.loadUrl("http://google.com");
         web.getSettings().setJavaScriptEnabled(true);
+        web.loadUrl("http://google.com");
+
 
         //enter toimii hakunappina
         url.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
     public void refresh(View v){
         web.reload();
     }
+
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void muuta(View v){
         if (osoite.equals("index.html")) {
@@ -93,5 +94,5 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"You have to be on 'index.html' page",Toast.LENGTH_SHORT).show();
         }
     }
-    
+
 }
